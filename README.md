@@ -1,6 +1,6 @@
 # Learning resources - Python
 
-This repository contains learning resources for Python.
+This repository contains learning resources for Python. Other part of repository is [Arena Fighting Game](https://github.com/Dice-Sensei/arena-fighting-game).
 
 ## Acknowledgement
 
@@ -8,7 +8,7 @@ This repository was created as part of project between [Dice-Sensei](https://git
 
 ## Creation notes
 
-Most of code in this repository was created as part of programming course. It was live coded while explaining purpose of the code and showing examples of usage.
+Most of code in this repository was created as part of programming course. It was live coded while explaining purpose of the code and showing examples of usage. This is not all of the code produced but only what was left in the end of lecture.
 
 ## Purpose
 
