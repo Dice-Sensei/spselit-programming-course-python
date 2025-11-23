@@ -1,0 +1,148 @@
+{
+  "event": "2025",
+  "day1_ts": 1764565200,
+  "owner_id": 252304,
+  "num_days": 12,
+  "members": {
+    "4271633": {
+      "stars": 0,
+      "name": "Daniel Horváth",
+      "completion_day_level": {
+
+      },
+      "local_score": 0,
+      "id": 4271633,
+      "last_star_ts": 0
+    },
+    "3634311": {
+      "completion_day_level": {
+
+      },
+      "local_score": 0,
+      "last_star_ts": 0,
+      "id": 3634311,
+      "stars": 0,
+      "name": "Ishikawa Rachel"
+    },
+    "4407991": {
+      "local_score": 0,
+      "completion_day_level": {
+
+      },
+      "last_star_ts": 0,
+      "id": 4407991,
+      "name": "Vt002",
+      "stars": 0
+    },
+    "4421077": {
+      "stars": 0,
+      "name": "koppel",
+      "id": 4421077,
+      "last_star_ts": 0,
+      "completion_day_level": {
+
+      },
+      "local_score": 0
+    },
+    "4359374": {
+      "local_score": 0,
+      "completion_day_level": {
+
+      },
+      "last_star_ts": 0,
+      "id": 4359374,
+      "stars": 0,
+      "name": "jejkub"
+    },
+    "4280544": {
+      "id": 4280544,
+      "last_star_ts": 0,
+      "local_score": 0,
+      "completion_day_level": {
+
+      },
+      "name": "eri",
+      "stars": 0
+    },
+    "3343240": {
+      "stars": 0,
+      "name": "AltFurr",
+      "id": 3343240,
+      "last_star_ts": 0,
+      "local_score": 0,
+      "completion_day_level": {
+
+      }
+    },
+    "4457444": {
+      "local_score": 0,
+      "completion_day_level": {
+
+      },
+      "id": 4457444,
+      "last_star_ts": 0,
+      "stars": 0,
+      "name": "Programuju"
+    },
+    "4276114": {
+      "name": "Jaroslav Vízner",
+      "stars": 0,
+      "id": 4276114,
+      "last_star_ts": 0,
+      "completion_day_level": {
+
+      },
+      "local_score": 0
+    },
+    "252304": {
+      "local_score": 0,
+      "completion_day_level": {
+
+      },
+      "id": 252304,
+      "last_star_ts": 0,
+      "stars": 0,
+      "name": "Erik Macháček"
+    },
+    "3664371": {
+      "name": "strasidlo 13",
+      "stars": 0,
+      "completion_day_level": {
+
+      },
+      "local_score": 0,
+      "id": 3664371,
+      "last_star_ts": 0
+    },
+    "4514599": {
+      "completion_day_level": {
+
+      },
+      "local_score": 0,
+      "last_star_ts": 0,
+      "id": 4514599,
+      "stars": 0,
+      "name": "petrhornik"
+    },
+    "3249958": {
+      "stars": 0,
+      "name": "Lukáš Hájek",
+      "local_score": 0,
+      "completion_day_level": {
+
+      },
+      "id": 3249958,
+      "last_star_ts": 0
+    },
+    "4238139": {
+      "name": "MoonDev",
+      "stars": 0,
+      "last_star_ts": 0,
+      "id": 4238139,
+      "local_score": 0,
+      "completion_day_level": {
+
+      }
+    }
+  }
+}
