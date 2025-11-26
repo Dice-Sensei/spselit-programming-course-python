@@ -24,8 +24,6 @@
 
 # print(next(gen))
 
-# print(next(gen))
-
 # print("for now")
 
 # for x in gen:
