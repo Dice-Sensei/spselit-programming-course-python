@@ -14,6 +14,15 @@ x = "hello"
 print(x)
 print(type(x))
 
+# Other basic data types are float for floating point numbers and bool for boolean values (True/False)
+x = 3.14
+print(x)
+print(type(x))
+
+x = True
+print(x)
+print(type(x))
+
 # Here are happening two things first we are calculating 4 + 5 and then assigning it to variable sum
 #  Also, we are "shadowing" built-in function sum - which means we are reusing name of built-in function for our own variable; This is not recommended and some other languages don't support it
 sum = 4 + 5
