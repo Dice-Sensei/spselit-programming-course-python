@@ -20,3 +20,10 @@ These resources are being redacted and improved so they can be used as learning 
 
 The purpose of this repository is to store code written in lectures with explanations.
 So students can review it later.
+
+## Resources
+- [Basics](basics.py) - data types, variables, printing
+- [List](data_collections_list.py) - data collections as whole, list related examples
+- [Tuple](data_collections_tuple.py) - tuple related examples
+- [Sets](data_collections_set.py) - set related examples
+- [Dictionaries](data_collections_dictionary.py) - dictionary related examples
