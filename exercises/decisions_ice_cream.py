@@ -1,20 +1,4 @@
-# Uživatel zadá číslo
-
-# Ověřit zda číslo bylo větší než 20 - a vypsat informaci
-# Ověřit zda číslo bylo větší než 25 - a vypsat informaci
-# Ověřit zda číslo bylo mensí nebo rovno 65 - a vypsat informaci
-# Ověřit zda číslo patří do rozsahu (40-65) - vypsat informaci
-
-# Uživatel zadá druhé číslo
-
-# Ověřit zda druhé číslo je větší nebo rovno prvnímu číslu
-# Ověřit zda druhé číslo je menší nebo rovno prvnímu číslu
-
-# Ověřit zda druhé číslo je dělitelné prvním bezezbytku
-
-
-# Zadání číslo 2
-# Výpočet ceny zmrzliny z jejího kódu
+﻿# Výpočet ceny zmrzliny z jejího kódu
 # Příklad kódu: E3N2
 # Způsob kódování písmeno číslo písmeno číslo
 
@@ -35,7 +19,8 @@
 # Pokud poslední číslice je sudá => k ceně se přičítá 2
 # Pokud poslední číslice je lichá => k ceně se přičítá 3
 
-# Kolik stojí následující zmrzliny? F3A2=14, A1A5=15, X0X6=15, X1Y3=4, C7F6=15, K8B3=19
+# Kolik stojí následující zmrzliny? F3A2, A1A5, X0X6, X1Y3, C7F6, K8B3
+#2 S3C0, K2H5, X1X3, X1H2, l0a3
 
 code = "X0X6"
 price = 0
@@ -95,3 +80,5 @@ else:
 print(price)
 print(price_parts)  # check for correct length
 print(sum(price_parts))
+
+# Results: F3A2=14, A1A5=15, X0X6=15, X1Y3=4, C7F6=15, K8B3=19,
