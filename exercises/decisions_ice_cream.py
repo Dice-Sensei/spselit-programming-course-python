@@ -20,11 +20,30 @@
 # Pokud poslední číslice je lichá => k ceně se přičítá 3
 
 # Kolik stojí následující zmrzliny? F3A2, A1A5, X0X6, X1Y3, C7F6, K8B3
-#2 S3C0, K2H5, X1X3, X1H2, l0a3
 
-code = "X0X6"
+# Níže je update zadání potom co zákazník zjistil, že potřebuje další změny na které přišel až při používání
+# 2 Pokud kód je X1X3 celková cena zmrzliny bude 28
+# 2 Pokud X1?? (otazník reprezentuje jakékoliv další znaky) celková cena zmrzliny je 23
+# 2 Kód může obsahovat malý písmena - bude se chovat stejně jako by byl velkejma písmenama
+# 2 Pokud první znak je S tak základ ceny je 7
+# 2 Pokud poslední číslice je 0 tak se k ceně přičítá 5
+# 2 Nové testovací kódy: S3C0, K2H5, X1X3, X1H2, l0a3
+
+code = "l0a3"
 price = 0
 price_parts = []
+
+# 2 fix format
+code = code.upper()
+
+# 2 special checks
+if code == "X1X3":
+    print(28)
+    exit()
+
+if code.startswith("X1"):
+    print(23)
+    exit()
 
 # first char
 if code[0] == "A" or code[0] == "B" or code[0] == "F":
@@ -33,6 +52,10 @@ if code[0] == "A" or code[0] == "B" or code[0] == "F":
 elif code[0] == "C" or code[0] == "D" or code[0] == "X":
     price = 9
     price_parts.append(9)
+# 2 S check
+elif code[0] == "S":
+    price = 7
+    price_parts.append(7)
 else:
     price = 10
     price_parts.append(10)
@@ -70,7 +93,11 @@ else:
 
 # last number
 last_number = int(code[3])
-if last_number % 2 == 0:
+# 2 zero check
+if last_number == 0:
+    price += 5
+    price_parts.append(5)
+elif last_number % 2 == 0:
     price += 2
     price_parts.append(2)
 else:
@@ -82,3 +109,4 @@ print(price_parts)  # check for correct length
 print(sum(price_parts))
 
 # Results: F3A2=14, A1A5=15, X0X6=15, X1Y3=4, C7F6=15, K8B3=19,
+# 2 Results: F3A2=14, A1A5=15, X0X6=15, X1Y3=23, C7F6=15, K8B3=19, S3C0=17, K2H5=16, X1X3=28, X1H2=23, l0a3=14
