@@ -30,3 +30,4 @@ So students can review it later.
 - [Comparisons](comparisons.py) - comparison operators
 - [Decisions](decisions.py) - if, elif, else statements
 - [Loops](loops.py) - for, while loops
+- [Error Handling](error_handling.py) - try, except, finally blocks
