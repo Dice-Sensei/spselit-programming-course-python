@@ -31,3 +31,4 @@ So students can review it later.
 - [Decisions](decisions.py) - if, elif, else statements
 - [Loops](loops.py) - for, while loops
 - [Error Handling](error_handling.py) - try, except, finally blocks
+- [File Handling](file_handling.py) - file handling examples
