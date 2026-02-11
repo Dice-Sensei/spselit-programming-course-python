@@ -27,3 +27,6 @@ So students can review it later.
 - [Tuple](data_collections_tuple.py) - tuple related examples
 - [Sets](data_collections_set.py) - set related examples
 - [Dictionaries](data_collections_dictionary.py) - dictionary related examples
+- [Comparisons](comparisons.py) - comparison operators
+- [Decisions](decisions.py) - if, elif, else statements
+- [Loops](loops.py) - for, while loops
