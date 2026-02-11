@@ -1,183 +1,102 @@
-"""
-Programming Course: For Loops and While Loops
-High School Python Lecture Notes + Examples
-"""
+# Loops in code are important for executing the same set of instruction on more than one item or more than ones.
 
-# -------------------------
-# 1) Why loops?
-# -------------------------
-# Loops help you repeat actions without copying the same code many times.
-# Example: print numbers 1 to 5.
+# Basically there are two types of loops: while and for loops
+# For is mostly used for iterating over a sequence (list, tuple, string) or other iterable objects.
+# While is mostly used when you don't know how many times you need to repeat the action.
 
-print("\n--- 1) Why loops? ---")
-for number in [1, 2, 3, 4, 5]:
+# For loop structure is: keyword for the name of the variable which can be used inside loop and represents the current item, keyword in and iterable variable last symbol is ':'
+# For loop is looping as long there are items in the iterable variable or is break-ed
+
+my_number_list = [1, 2, 3, 4, 5]
+print("Number list", my_number_list)
+
+# Iterate over the number list and print its values
+print("Iterating over number list:")
+for number in my_number_list:
     print(number)
 
-
-# -------------------------
-# 2) How loops work (step-by-step idea)
-# -------------------------
-# A loop repeats the same block.
-# Each repetition is called an iteration.
-#
-# For loops:
-# - You give a sequence (like a list or range).
-# - Python takes one value at a time and assigns it to the loop variable.
-# - The loop ends when there are no more values.
-#
-# While loops:
-# - You give a condition.
-# - If the condition is True, the body runs.
-# - After the body, the condition is checked again.
-#
-# Simple trace example:
-# values = [10, 20, 30]
-# for v in values:
-#     print(v)
-# Iteration 1: v = 10 -> prints 10
-# Iteration 2: v = 20 -> prints 20
-# Iteration 3: v = 30 -> prints 30
-# Then the loop stops.
+# Iterate over the number list and print only odd numbers
+print("Iterating over number list and printing only odd numbers:")
+for number in my_number_list:
+    if number % 2 != 0:
+        print(number)
 
 
-# -------------------------
-# 3) for loop with range()
-# -------------------------
-# range(start, stop) goes from start up to (but not including) stop.
-# range(stop) starts from 0.
-# range can also take a step: range(start, stop, step).
-# - The step can be negative to count down.
-# - range produces numbers one by one without storing a full list.
+# Iterate over the number string and print pairs of odd numbers
+number_string = "73910462580273919468250731476985062958418734209619586734420681577689052304917682852604937315984068420759915038262708645149831706"
+previous_number = None
 
-print("\n--- 3) for loop with range() ---")
-print("Numbers 0 to 4:")
-for i in range(5):
-    print(i)
+print("Iterating over number string and printing pairs of odd numbers:")
+for number in number_string:
+    number = int(number)
+    if number % 2 != 0:
+        if previous_number is not None:
+            print(f"{previous_number}{number}")
 
-print("Numbers 1 to 5:")
-for i in range(1, 6):
-    print(i)
-
-print("Even numbers 2 to 10:")
-for i in range(2, 11, 2):
-    print(i)
-
-print("Counting down 5 to 1:")
-for i in range(5, 0, -1):
-    print(i)
-
-
-# -------------------------
-# 4) for loop over a list
-# -------------------------
-fruits = ["apple", "banana", "cherry"]
-
-print("\n--- 4) for loop over a list ---")
-print("Fruits:")
-for fruit in fruits:
-    print(fruit)
-
-
-# -------------------------
-# 5) Using a loop to sum numbers
-# -------------------------
-total = 0
-print("\n--- 5) Using a loop to sum numbers ---")
-for i in range(1, 6):  # 1+2+3+4+5
-    total = total + i
-print("Sum 1..5 =", total)
-
-
-# -------------------------
-# 6) while loop basics
-# -------------------------
-# A while loop keeps going as long as the condition is True.
-# The condition is checked before each iteration.
-# If it is False at the start, the loop does not run at all.
-# Use a clear condition when you can say "keep going while ...".
-# Use break when the stopping moment is discovered inside the loop body.
-
-count = 1
-print("\n--- 6) while loop basics ---")
-print("Counting with while:")
-while count <= 5:
-    print(count)
-    count = count + 1
-
-
-# -------------------------
-# 7) while loop with user input
-# -------------------------
-# Keep asking until the correct password is typed.
-
-password = "python123"
-guess = ""
-print("\n--- 7) while loop with user input ---")
-while guess != password:
-    guess = input("Type the password: ")
-    if guess != password:
-        print("Wrong password, try again.")
+        previous_number = number
     else:
-        print("Access granted!")
+        previous_number = None
 
 
-# -------------------------
-# 8) break and continue
-# -------------------------
-# break stops the loop completely.
-# continue skips to the next iteration.
+# Iterating over a large number of items created by range
+print("Iterating over large number of items created by range:")
+for number in range(0, 1000, 2):
+    print(number)
 
-print("\n--- 8) break and continue ---")
-print("Break example:")
-for i in range(1, 11):
-    if i == 6:
-        break
-    print(i)
-
-print("Continue example (odd numbers only):")
-for i in range(1, 11):
-    if i % 2 == 0:
-        continue
-    print(i)
+# Range function here is a generator that means it generates values on the fly and does not store them all in memory - more on this later
 
 
-# -------------------------
-# 9) Common mistakes
-# -------------------------
-# 1) Infinite loop: forgetting to update the variable.
-# 2) Off-by-one errors: range end is not included.
+# While loop structure is: keyword while bool condition and last symbol is ':'
+# While loop is looping as long as bool condition is True or is break-ed
 
-print("\n--- 9) Common mistakes ---")
-# Example of potential infinite loop (commented out):
-# n = 1
-# while n <= 5:
-#     print(n)
-#     # n = n + 1  # if this line is missing, loop never ends!
+# Sum numbers from 1 to 10
+print("Summing numbers from 1 to 10:")
+number_sum = 0
+current_number = 1
 
+while current_number <= 10:
+    number_sum += current_number
+    current_number += 1
 
-# -------------------------
-# 10) Which loop to use?
-# -------------------------
-# Use a for loop when:
-# - You know how many times you will repeat.
-# - You want to go through each item in a list, string, or range.
-#
-# Use a while loop when:
-# - You do not know how many repeats are needed.
-# - You are waiting for a condition to become True or False.
-# - You are taking input until a correct value is entered.
-#
-# Rule of thumb: If you can describe it as "for each item" or "for N times",
-# choose for. If it is "until this happens", choose while.
-
-print("\n--- 10) Which loop to use? ---")
+print(number_sum)
 
 
-# -------------------------
-# 11) Practice tasks for students
-# -------------------------
-print("\n--- 11) Practice tasks for students ---")
-# 1) Print numbers 10 to 1 using a while loop.
-# 2) Print the squares of numbers 1 to 5 using a for loop.
-# 3) Sum all even numbers from 1 to 20.
-# 4) Ask the user for numbers until they type 0, then print the total.
+# If we need to exit the loop early, we can use the break keyword; works in both while and for loops
+print("Summing numbers from 1 to 10 with break on 5:")
+number_sum = 0
+current_number = 1
+
+while current_number <= 10:
+    print(current_number)
+    number_sum += current_number
+
+    if current_number == 5:
+        print("Breaking loop")
+        break  # here we will break the loop when we reach 5
+
+    current_number += 1
+
+print(f"Sum: {number_sum}")
+
+# If we need to skip some iterations, we can use continue keyword; works in both while and for loops
+print("Summing numbers from 1 to 10 with continue on even numbers:")
+number_sum = 0
+current_number = 1
+
+while current_number <= 10:
+    print(current_number)
+    if current_number % 2 == 0:
+        print("Skipping even number")
+        current_number += 1
+        continue  # skip even numbers
+
+    number_sum += current_number
+
+    current_number += 1
+
+print(f"Sum: {number_sum}")
+
+
+# Common mistakes
+# Infinite loop: forgetting to break loop or having always true condition
+# Off-by-one errors: the range end is not included
