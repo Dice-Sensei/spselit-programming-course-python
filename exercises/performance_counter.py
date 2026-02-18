@@ -1,3 +1,6 @@
+# Implement performance counter decorator
+# It should calculate the execution time of the decorated function
+
 from time import time
 
 
@@ -23,4 +26,4 @@ create_list(100000)
 create_list(1000000)  # 1M
 create_list(10000000)
 create_list(100000000)
-# create_list(1000000000)
+# create_list(1000000000) # not enough RAM
