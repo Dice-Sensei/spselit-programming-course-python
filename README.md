@@ -32,3 +32,4 @@ So students can review it later.
 - [Loops](loops.py) - for, while loops
 - [Error Handling](error_handling.py) - try, except, finally blocks
 - [File Handling](file_handling.py) - file handling examples
+- [Functions](functions.py) - functions examples
