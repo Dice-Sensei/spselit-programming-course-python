@@ -105,5 +105,27 @@ print(outer_func(30))
 
 
 # Scopes
+# Scopes are regions (blocks of code) that share variables; respectively define what variables can be accessed from where
+# Python creates scopes around functions only - other programming languages may have different scope areas
+
+# Mostly we work with two scopes Global and Local
+# Global - inside script body, accessible from anywhere
+# Local - inside function, only accessible from it (or nested functions)
+
+x = 42 # variable x on global scope
+
+def scoped():
+    y = 3 # variable y on local scope
+    print("Inside function")
+    print("x:", x) # accessing global variable
+    print("y:", y) # accessing local variable
+
+scoped()
+
+print("x:", x) # accessing global variable
+# Note: show how y is not available outside a scoped function
+
 
 # System functions
+# Python programming language has quite a few build-in functions like print(), sum(), len(), etc. - we already used them
+# There are some system functions, which needs to be used or overridden for the system to work properly or to provide some functionality, for example __init__ in objects
