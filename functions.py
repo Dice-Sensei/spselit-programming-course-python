@@ -1,177 +1,109 @@
-"""
-Programming Course: Functions
-High School Python Lecture Notes + Examples
-"""
+# Functions in code are used to add reusability (no need to write the same code many times) and for structuring/readability (it is easier to understand and maintain many small functions instead of one big)
 
-# -------------------------
-# 1) Why functions?
-# -------------------------
-# Functions let you group code into a reusable block.
-# They help avoid repetition and make programs easier to read.
+# Functions should be small and do only one thing
+# Functions should be named appropriately
 
-print("\n--- 1) Why functions? ---")
+# Definition of function
+# Basic structure: def keyword name_of_function ():
+def print_tree():
+    # standard inner block code indention
+    print("   *")
+    print("  ***")
+    print(" *****")
+    print("*******")
+    print("   |")
 
+# Functions have to be called to run
+# Functions has to be defined before they can be used
+print_tree()
 
-# -------------------------
-# 2) Basic function definition and call
-# -------------------------
-# def creates a function. The body is indented.
-# You must call the function to run it.
-# Indentation shows which lines belong to the function body.
-# If a line is not indented, it is outside the function.
-# Python uses indentation instead of { } braces.
-# A common choice is 4 spaces per indent level.
+# Functions can be called multiple times
+print_tree()
+print_tree()
 
-print("\n--- 2) Basic function definition and call ---")
+# Functions can be called from other functions
+def print_forest():
+    print_tree()
+    print_tree()
+    print_tree()
 
-def say_hello():
-    print("Hello!")
-
-say_hello()
-say_hello()
-
-
-# -------------------------
-# 3) Parameters and arguments
-# -------------------------
-# A parameter is a variable in the function definition.
-# An argument is the value you pass when calling the function.
-
-print("\n--- 3) Parameters and arguments ---")
-
-def greet(name):
-    print("Hello,", name)
-
-greet("Anna")
-greet("Omar")
+print("Printing forest:")
+print_forest()
 
 
-# -------------------------
-# 4) Returning values
-# -------------------------
-# return sends a value back to the caller.
-# After return, the function stops.
+# Functions are automatically returning None value
 
-print("\n--- 4) Returning values ---")
+print("Return value of print_tree():", print_tree())
+print(type(print_tree()))
 
-def add(a, b):
-    return a + b
+# By using the keyword return we can return value from the function
+def return_hello():
+    return "Hello!"
 
-result = add(3, 5)
-print("3 + 5 =", result)
+print("Return value of return_hello():", return_hello())
+print(type(return_hello()))
 
 
-# -------------------------
-# 5) Using return in calculations
-# -------------------------
+# Functions can have defined params (inputs) to be more versatile
+# Number of params is not limited, but for readability reasons it should be kept small
+# Basic structure: def keyword name_of_function (param1, param2):
+def sum_numbers(num1, num2):
+    return num1 + num2
 
-print("\n--- 5) Using return in calculations ---")
+# When calling a function, arguments are passed to parameters
 
-def rectangle_area(width, height):
-    return width * height
+# Here we call a function by using position arguments - the order in which they are input is important
+print(sum_numbers(5, 3))
 
-area = rectangle_area(4, 6)
-print("Area =", area)
-print("Double area =", rectangle_area(4, 6) * 2)
+# Here we call the same function using keyword arguments we define which param gets which value; order of arguments is not important
+print(sum_numbers(num2=3, num1=5))
 
+# Functions can also have default value for parameters - when no values is passed to them default will be used
+# Basic structure: def keyword name_of_function (param1=def_value):
+def greet(name, greeting="Welcome"):
+    print(f"{greeting} {name}")
 
-# -------------------------
-# 6) Default parameter values
-# -------------------------
-# If you do not pass a value, the default is used.
+greet("Anna") # the default value for greeting will be used
+greet("John", "Hello there") # greeting here is supplied, default value will not be used
 
-print("\n--- 6) Default parameter values ---")
-
-def power(base, exponent=2):
-    return base ** exponent
-
-print("5 squared =", power(5))
-print("2 cubed =", power(2, 3))
-
-
-# -------------------------
-# 7) *args and **kwargs (extra arguments)
-# -------------------------
-# *args collects extra positional arguments into a tuple.
-# **kwargs collects extra keyword arguments into a dictionary.
-# Use them when you do not know how many arguments will be passed.
-# Positional arguments come first (by position), keyword arguments use name=value.
-# You can mix them in a call, but positional must come before keyword.
-# Inside the function, args behaves like a tuple and kwargs like a dict.
-
-print("\n--- 7) *args and **kwargs (extra arguments) ---")
+# Functions can take two special parameters - *args and **kwargs
+# *args collects extra positional arguments into a tuple
+# **kwargs collects extra keyword arguments into a dictionary
+# These can be used when we don't know how many arguments will be passed
+# Or in decorators - in later lectures
 
 def total_price(*prices):
+    # inside special params are used without the * (star) at the start of their names
+    print("RAW prices param:", prices)
     return sum(prices)
 
-def create_student_record(**info):
-    # Builds and prints a student record from labeled details.
-    print("Student record:", info)
+print("Total price =", total_price(2.5))
+print("Total price =", total_price(2.5, 3.0, 4.75, 5.25))
 
-print("Total price =", total_price(2.5, 3.0, 4.75))
-create_student_record(name="Maya", grade=9, club="Robotics")
+def log_student_record(**student_record):
+    print("RAW student_record param:", student_record)
+    print("Student data:", student_record)
 
+log_student_record(name="Maya", grade=9, club="Robotics")
 
-# -------------------------
-# 8) Multiple parameters and clear names
-# -------------------------
-
-print("\n--- 8) Multiple parameters and clear names ---")
-
-def format_full_name(first_name, last_name):
-    return first_name + " " + last_name
-
-print(format_full_name("Lina", "Park"))
+# Order of arguments matters - params, *args, default params, **kwargs
 
 
-# -------------------------
-# 9) Return vs print
-# -------------------------
-# print shows a value; return gives it back to the caller.
-# You can use return value later, but you cannot reuse print output.
+# Functions can have inner functions - called nested functions
+# These functions can be called only from the function they defined in
 
-print("\n--- 9) Return vs print ---")
+def outer_func(num1):
+    def inner_func(inner_num1):
+        print("Inner func")
+        return inner_num1 + 5
 
-def multiply(a, b):
-    return a * b
+    print("Outer func")
+    return inner_func(num1 + 10)
 
-print("Printed:", multiply(2, 4))
-saved = multiply(2, 4)
-print("Saved for later:", saved + 1)
-
-
-# -------------------------
-# 10) Variable scope (local vs global)
-# -------------------------
-# Variables created inside a function are local.
-# They exist only inside that function and are not visible outside.
-# Variables created outside a function are global.
-# If a local variable has the same name as a global one, the local one wins.
-
-print("\n--- 10) Variable scope (local vs global) ---")
-
-def make_message():
-    message = "Inside the function"
-    print(message)
-
-make_message()
+print(outer_func(30))
+# Note: show how inner_func is not offered and does not exist outside outer_func
 
 
-# -------------------------
-# 11) Function design tips
-# -------------------------
-# - Give functions clear names using verbs.
-# - Keep each function focused on one job.
-# - Use return when you want to compute a result.
+# Scopes
 
-print("\n--- 11) Function design tips ---")
-
-
-# -------------------------
-# 12) Practice tasks for students
-# -------------------------
-print("\n--- 12) Practice tasks for students ---")
-# 1) Write a function that prints "Good morning".
-# 2) Write a function that returns the square of a number.
-# 3) Write a function that takes two numbers and returns the larger one.
-# 4) Write a function that returns the sum of numbers from 1 to n.
+# System functions
