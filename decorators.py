@@ -28,3 +28,6 @@ def sum_numbers(num1, num2):
 # standard call of functions - here is no change related to decorators
 print_string("I was here phantomas")
 print(sum_numbers(5, 8))
+
+
+# Python has some built-in decorators like @cache
