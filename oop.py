@@ -83,11 +83,45 @@ class GamingNotebook(Notebook):
         print(f"Boosting performance...for {self.boost_length} seconds")
 
 
+print("Example: Inheritance - Creating Gaming Notebook")
 my_gaming_notebook = GamingNotebook("MSI", boost_length=5)
 my_gaming_notebook.describe()  # this method exists in Notebook class (parent)
 my_gaming_notebook.boost()  # this method is specific to the GamingNotebook class
 
-# Polymorphism
+# Polymorphism means "many forms" and describes a concept that methods/functions/operators with the same name can be executed on many objects or classes.
+# For example function len() is able to show length of multiple collections (string, list, tuple)
+
+# For classes, we can use polymorphism in combination with inheritance to achieve code reuse and flexibility. By defining methods with the same name in different classes, we can write generic code that works with objects of various types.
+
+
+class Vehicle:
+    pass
+
+
+class Car(Vehicle):
+
+    def honk(self):
+        print("Car goes: Tuu! Tuu!")
+
+
+class Bicycle(Vehicle):
+    def honk(self):
+        print("Bicycle goes: Cr! Cr!")
+
+
+class ContainerBoat(Vehicle):
+    def honk(self):
+        print("Container boat goes: Tuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu!")
+
+
+print("Example: Polymorphism - Honking of different vehicles")
+car = Car()
+bicycle = Bicycle()
+boat = ContainerBoat()
+
+car.honk()
+bicycle.honk()
+boat.honk()
 
 
 # Encapsulation is the practice of hiding the internal details of an object and exposing only the necessary information to the outside world. This helps to prevent unintended modifications and ensures that the object's behavior remains consistent.
@@ -98,7 +132,7 @@ class Hero:
         self._real_identity = real_identity
 
 
-print("Creating hero profiles")
+print("Example: Encapsulation - Creating hero profiles")
 batman = Hero("Batman", "Bruce Wayne")
 print(batman.name)
 # Note IDE should show a warning regarding access to private property
