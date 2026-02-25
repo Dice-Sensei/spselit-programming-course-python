@@ -34,3 +34,4 @@ So students can review it later.
 - [File Handling](file_handling.py) - file handling examples
 - [Functions](functions.py) - function definitions, parameters, execution, scopes
   - [Decorators](decorators.py) - decorators example
+- [Object-Oriented Programing](oop.py) - OOP concepts and examples

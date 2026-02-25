@@ -1,4 +1,4 @@
-# Object Oriented Programing (OOP)
+# Object-Oriented Programing (OOP)
 # It is a programming concept (paradigm) that describes how to think and organize code. This one specifies that everything is an object.
 # It defines how to structure and organize code in a way that is easy to understand and maintain.
 
