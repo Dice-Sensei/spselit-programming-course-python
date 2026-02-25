@@ -72,19 +72,20 @@ print("Dell description:", my_dell_notebook.description)
 
 
 class GamingNotebook(Notebook):
+
+    # this function is overriding the parent class method; in case we want to pass data down to parent (which we always want), we need to call parents __init__ method
     def __init__(self, manufacturer, boost_length, color="black"):
+        # for that we can use super() method which means parent object
         super().__init__(manufacturer, color)
         self.boost_length = boost_length
 
     def boost(self):
         print(f"Boosting performance...for {self.boost_length} seconds")
 
-    pass
-
 
 my_gaming_notebook = GamingNotebook("MSI", boost_length=5)
-my_gaming_notebook.describe()
-my_gaming_notebook.boost()
+my_gaming_notebook.describe()  # this method exists in Notebook class (parent)
+my_gaming_notebook.boost()  # this method is specific to the GamingNotebook class
 
 # Polymorphism
 
